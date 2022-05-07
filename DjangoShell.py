@@ -1,3 +1,4 @@
+from PIL import Image
 import os 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Pizzeria.settings")
 
@@ -21,3 +22,8 @@ toppings = p.toppings_set.all()
 
 for t in toppings:
     print(t)
+
+for p in pizzas:
+    print(p)
+    im = Image.open(p.picture)
+    im.show()
